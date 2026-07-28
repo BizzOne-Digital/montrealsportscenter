@@ -1,0 +1,65 @@
+.dashboard { display: flex; flex-direction: column; gap: 1.5rem; }
+.dash-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a3470 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  color: white;
+}
+.dash-welcome h2 { font-size: 1.3rem; margin-bottom: 4px; }
+.dash-welcome p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+.stat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-100);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+.stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.stat-card.highlight { border-color: rgba(249,115,22,0.3); }
+.sc-icon {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+}
+.sc-value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1; color: var(--gray-900); }
+.sc-label { font-size: 0.78rem; color: var(--gray-400); font-weight: 500; }
+.dash-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+.card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.card-header h3 { font-size: 1rem; color: var(--navy); }
+.loading-text { color: var(--gray-400); font-size: 0.9rem; padding: 1rem 0; }
+.quick-links { display: flex; flex-direction: column; gap: 4px; }
+.quick-link {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-sm);
+  color: var(--gray-700);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.quick-link:hover { background: var(--gray-50); color: var(--orange); }
+@media (max-width: 1400px) { .dash-stats { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1024px) { .dash-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .dash-stats { grid-template-columns: repeat(2, 1fr); } .dash-welcome { flex-direction: column; align-items: flex-start; } }

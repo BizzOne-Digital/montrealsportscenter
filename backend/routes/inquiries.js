@@ -2,12 +2,26 @@ const express = require('express');
 const router = express.Router();
 const Inquiry = require('../models/Inquiry');
 const { protect } = require('../middleware/auth');
+const { sendNotification } = require('../config/email');
 
 // Public - submit inquiry
 router.post('/', async (req, res) => {
   try {
     const inquiry = await Inquiry.create(req.body);
     res.status(201).json({ success: true, message: 'Inquiry submitted successfully', data: inquiry });
+
+    sendNotification({
+      subject: `New Inquiry from ${inquiry.fullName || 'Website'}`,
+      html: `
+        <h3>New inquiry received</h3>
+        <p><strong>Name:</strong> ${inquiry.fullName || '-'}</p>
+        <p><strong>Email:</strong> ${inquiry.email || '-'}</p>
+        <p><strong>Phone:</strong> ${inquiry.phone || '-'}</p>
+        <p><strong>Interest:</strong> ${inquiry.interest || '-'}</p>
+        <p><strong>Message:</strong> ${inquiry.message || '-'}</p>
+      `,
+    }).then(() => console.log('Inquiry notification email sent to', process.env.NOTIFY_EMAIL || process.env.EMAIL_USER))
+      .catch((err) => console.error('Email notification failed:', err.message));
   } catch (err) { res.status(400).json({ success: false, message: err.message }); }
 });
 

@@ -14,9 +14,17 @@ const blogSchema = new mongoose.Schema({
   },
   tags: [{ type: String }],
   author: { type: String, default: 'MSC Team' },
+  titleFr: { type: String, default: '' },
+  excerptFr: { type: String, default: '' },
+  contentFr: { type: String, default: '' },
+  tagsFr: [{ type: String }],
   isPublished: { type: Boolean, default: false },
   publishedAt: { type: Date },
   views: { type: Number, default: 0 },
+  titleFr: { type: String, default: '' },
+  excerptFr: { type: String, default: '' },
+  contentFr: { type: String, default: '' },
+  tagsFr: [{ type: String, default: '' }],
 }, { timestamps: true });
 
 blogSchema.pre('save', function (next) {

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('./config/email.js'\\); console.log\\('OK'\\)\")",
+      "Bash(git check-ignore *)"
+    ]
+  }
+}

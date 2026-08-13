@@ -6,7 +6,7 @@ import './CrudPage.css';
 import './GalleryPage.css';
 
 const CATS = ['facility', 'programs', 'events', 'team', 'general'];
-const EMPTY = { title: '', description: '', category: 'general', order: 0, isActive: true };
+const EMPTY = { title: '', titleFr: '', description: '', descriptionFr: '', category: 'general', order: 0, isActive: true };
 
 export default function GalleryPage() {
   const [items, setItems] = useState([]);
@@ -67,9 +67,15 @@ export default function GalleryPage() {
             </div>
             <form onSubmit={save} className="modal-form">
               <ImageUploader current={form.image} onSelect={setImageFile} label="Image *" />
-              <div className="form-group">
-                <label>Title *</label>
-                <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} required placeholder="Image title" />
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Title *</label>
+                  <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} required placeholder="Image title" />
+                </div>
+                <div className="form-group">
+                  <label>FR: Title</label>
+                  <input value={form.titleFr || ''} onChange={e => setForm(f => ({ ...f, titleFr: e.target.value }))} placeholder="French translation (optional)" />
+                </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
@@ -83,9 +89,15 @@ export default function GalleryPage() {
                   <input type="number" value={form.order} onChange={e => setForm(f => ({ ...f, order: e.target.value }))} />
                 </div>
               </div>
-              <div className="form-group">
-                <label>Description</label>
-                <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} rows={2} />
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Description</label>
+                  <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} rows={2} />
+                </div>
+                <div className="form-group">
+                  <label>FR: Description</label>
+                  <textarea value={form.descriptionFr || ''} onChange={e => setForm(f => ({ ...f, descriptionFr: e.target.value }))} rows={2} placeholder="French translation (optional)" />
+                </div>
               </div>
               <div className="form-row modal-actions">
                 <button type="button" className="btn btn-ghost" onClick={() => setShowForm(false)}>Cancel</button>

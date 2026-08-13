@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { getProgramIcon, IconArrowRight, IconCheck } from '../common/Icons';
 import Reveal from '../common/Reveal';
+import { pick } from '../../utils/localize';
 import './ProgramsSection.css';
 
 const UNSPLASH = {
@@ -14,6 +16,8 @@ const UNSPLASH = {
 };
 
 export default function ProgramsSection({ programs }) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   const [activeIdx, setActiveIdx] = useState(0);
   const active = programs?.[activeIdx];
 
@@ -23,9 +27,9 @@ export default function ProgramsSection({ programs }) {
     <section className="section programs-section" id="programs">
       <div className="container">
         <Reveal className="section-header">
-          <div className="section-label">Programs & Activities</div>
-          <h2>A basketball-first facility<br /><span className="text-orange">for every level.</span></h2>
-          <p className="section-desc">From first-time players to competitive athletes, MSC offers structured programs, flexible court access, and community activities under one roof.</p>
+          <div className="section-label">{t('programs.label')}</div>
+          <h2>{t('programs.headline1')}<br /><span className="text-orange">{t('programs.headline2')}</span></h2>
+          <p className="section-desc">{t('programs.description')}</p>
         </Reveal>
 
         <div className="programs-tabs">
@@ -36,7 +40,7 @@ export default function ProgramsSection({ programs }) {
               onClick={() => setActiveIdx(i)}
             >
               <span className="tab-icon">{getProgramIcon(p.icon, 18, i === activeIdx ? '#f97316' : '#64748b')}</span>
-              {p.title}
+              {pick(p, 'title', lang)}
             </button>
           ))}
         </div>
@@ -46,7 +50,7 @@ export default function ProgramsSection({ programs }) {
             <div className="showcase-image">
               <img
                 src={active.image || UNSPLASH[active.category] || UNSPLASH.rental}
-                alt={active.title}
+                alt={pick(active, 'title', lang)}
                 loading="lazy"
               />
               <div className="showcase-image-overlay">
@@ -55,10 +59,10 @@ export default function ProgramsSection({ programs }) {
             </div>
             <div className="showcase-info">
               <div className="showcase-badge badge badge-orange">{active.category}</div>
-              <h3>{active.title}</h3>
-              <p>{active.description}</p>
+              <h3>{pick(active, 'title', lang)}</h3>
+              <p>{pick(active, 'description', lang)}</p>
               <ul className="showcase-features">
-                {active.features?.map((f, i) => (
+                {pick(active, 'features', lang)?.map((f, i) => (
                   <li key={i}>
                     <span className="feature-icon"><IconCheck size={14} color="#f97316" /></span>
                     {f}
@@ -66,7 +70,7 @@ export default function ProgramsSection({ programs }) {
                 ))}
               </ul>
               <Link to="/contact" className="btn btn-primary mt-3">
-                Inquire About This Program
+                {t('programs.inquireButton')}
                 <IconArrowRight size={16} />
               </Link>
             </div>
@@ -77,12 +81,12 @@ export default function ProgramsSection({ programs }) {
           {programs.map((p, i) => (
             <Reveal as="div" key={p._id} delay={i * 60} className="program-card card" onClick={() => setActiveIdx(i)}>
               <div className="program-card-img">
-                <img src={p.image || UNSPLASH[p.category] || UNSPLASH.rental} alt={p.title} loading="lazy" />
+                <img src={p.image || UNSPLASH[p.category] || UNSPLASH.rental} alt={pick(p, 'title', lang)} loading="lazy" />
                 <div className="program-card-icon">{getProgramIcon(p.icon, 24, 'white')}</div>
               </div>
               <div className="program-card-body">
-                <h4>{p.title}</h4>
-                <p>{p.description}</p>
+                <h4>{pick(p, 'title', lang)}</h4>
+                <p>{pick(p, 'description', lang)}</p>
               </div>
             </Reveal>
           ))}

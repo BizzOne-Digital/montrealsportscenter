@@ -53,37 +53,38 @@ export default function AdminApp() {
 
 // Field definitions for generic pages
 const MEMBERSHIP_FIELDS = [
-  { name: 'name', label: 'Name', type: 'text', required: true },
+  { name: 'name', label: 'Name', type: 'text', required: true, frKey: 'nameFr' },
   { name: 'tier', label: 'Tier', type: 'select', options: ['bronze', 'silver', 'gold'] },
-  { name: 'badge', label: 'Badge Label', type: 'text' },
+  { name: 'badge', label: 'Badge Label', type: 'text', frKey: 'badgeFr' },
   { name: 'price', label: 'Price ($/month)', type: 'number', required: true },
-  { name: 'description', label: 'Description', type: 'textarea' },
-  { name: 'features', label: 'Features (one per line)', type: 'textarea', isArray: true },
-  { name: 'ctaText', label: 'Button Text', type: 'text' },
+  { name: 'description', label: 'Description', type: 'textarea', frKey: 'descriptionFr' },
+  { name: 'features', label: 'Features (one per line)', type: 'textarea', isArray: true, frKey: 'featuresFr' },
+  { name: 'ctaText', label: 'Button Text', type: 'text', frKey: 'ctaTextFr' },
   { name: 'isPopular', label: 'Mark as Popular', type: 'toggle' },
   { name: 'isActive', label: 'Active', type: 'toggle' },
   { name: 'order', label: 'Display Order', type: 'number' },
 ];
 
 const PRICING_FIELDS = [
-  { name: 'courtName', label: 'Court Name', type: 'text', required: true },
+  { name: 'courtName', label: 'Court Name', type: 'text', required: true, frKey: 'courtNameFr' },
   { name: 'offPeakPrice', label: 'Off-Peak Price ($/hr)', type: 'number', required: true },
   { name: 'peakPrice', label: 'Peak Price ($/hr)', type: 'number', required: true },
+  { name: 'unit', label: 'Unit (e.g. hour)', type: 'text', frKey: 'unitFr' },
   { name: 'icon', label: 'Icon', type: 'select', options: ['basketball', 'volleyball', 'pickleball', 'badminton', 'soccer', 'ball', 'hockey', 'court'] },
   { name: 'isActive', label: 'Active', type: 'toggle' },
   { name: 'order', label: 'Display Order', type: 'number' },
 ];
 
 const OFFERS_FIELDS = [
-  { name: 'title', label: 'Title', type: 'text', required: true },
-  { name: 'description', label: 'Description', type: 'textarea', required: true },
-  { name: 'discount', label: 'Discount Label (e.g. 20% OFF)', type: 'text' },
-  { name: 'badgeText', label: 'Badge Text', type: 'text' },
+  { name: 'title', label: 'Title', type: 'text', required: true, frKey: 'titleFr' },
+  { name: 'description', label: 'Description', type: 'textarea', required: true, frKey: 'descriptionFr' },
+  { name: 'discount', label: 'Discount Label (e.g. 20% OFF)', type: 'text', frKey: 'discountFr' },
+  { name: 'badgeText', label: 'Badge Text', type: 'text', frKey: 'badgeTextFr' },
   { name: 'badgeColor', label: 'Badge Color', type: 'select', options: ['orange', 'green', 'blue', 'purple'] },
-  { name: 'ctaText', label: 'Button Text', type: 'text' },
+  { name: 'ctaText', label: 'Button Text', type: 'text', frKey: 'ctaTextFr' },
   { name: 'ctaLink', label: 'Button Link', type: 'text' },
   { name: 'validUntil', label: 'Valid Until', type: 'date' },
-  { name: 'terms', label: 'Terms & Conditions', type: 'textarea' },
+  { name: 'terms', label: 'Terms & Conditions', type: 'textarea', frKey: 'termsFr' },
   { name: 'isFeatured', label: 'Featured', type: 'toggle' },
   { name: 'isActive', label: 'Active', type: 'toggle' },
   { name: 'order', label: 'Order', type: 'number' },
@@ -91,8 +92,8 @@ const OFFERS_FIELDS = [
 
 const TEAM_FIELDS = [
   { name: 'name', label: 'Full Name', type: 'text', required: true },
-  { name: 'role', label: 'Role / Title', type: 'text', required: true },
-  { name: 'bio', label: 'Bio', type: 'textarea' },
+  { name: 'role', label: 'Role / Title', type: 'text', required: true, frKey: 'roleFr' },
+  { name: 'bio', label: 'Bio', type: 'textarea', frKey: 'bioFr' },
   { name: 'email', label: 'Email', type: 'email' },
   { name: 'phone', label: 'Phone', type: 'text' },
   { name: 'isActive', label: 'Active', type: 'toggle' },
@@ -101,10 +102,10 @@ const TEAM_FIELDS = [
 
 const TESTIMONIAL_FIELDS = [
   { name: 'name', label: 'Full Name', type: 'text', required: true },
-  { name: 'role', label: 'Role / Program', type: 'text' },
-  { name: 'text', label: 'Testimonial Text', type: 'textarea', required: true },
+  { name: 'role', label: 'Role / Program', type: 'text', frKey: 'roleFr' },
+  { name: 'text', label: 'Testimonial Text', type: 'textarea', required: true, frKey: 'textFr' },
   { name: 'rating', label: 'Rating (1-5)', type: 'number' },
-  { name: 'program', label: 'Program Label', type: 'text' },
+  { name: 'program', label: 'Program Label', type: 'text', frKey: 'programFr' },
   { name: 'isFeatured', label: 'Featured', type: 'toggle' },
   { name: 'isActive', label: 'Active', type: 'toggle' },
   { name: 'order', label: 'Order', type: 'number' },

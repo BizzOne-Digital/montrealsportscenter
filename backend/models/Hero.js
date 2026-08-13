@@ -11,15 +11,23 @@ const heroSchema = new mongoose.Schema({
   stats: [
     {
       value: { type: String },
-      label: { type: String }
+      label: { type: String },
+      labelFr: { type: String, default: '' }
     }
   ],
   mission: {
     title: { type: String, default: 'MSC MISSION' },
-    text: { type: String, default: 'Build better players, stronger families, and a connected community.' }
+    text: { type: String, default: 'Build better players, stronger families, and a connected community.' },
+    titleFr: { type: String, default: '' },
+    textFr: { type: String, default: '' }
   },
   backgroundImage: { type: String, default: '' },
   isActive: { type: Boolean, default: true },
+  badgeFr: { type: String, default: '' },
+  headlineFr: { type: String, default: '' },
+  subheadlineFr: { type: String, default: '' },
+  primaryBtnTextFr: { type: String, default: '' },
+  secondaryBtnTextFr: { type: String, default: '' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Hero', heroSchema);

@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "programs": "Programmes",
+    "facility": "Installation",
+    "memberships": "Adhésions",
+    "partners": "Partenaires",
+    "blog": "Blogue",
+    "contact": "Contact",
+    "cta": "Rejoindre la liste d'intérêt",
+    "toggleMenu": "Basculer le menu",
+    "langEn": "EN",
+    "langFr": "FR"
+  },
+  "footer": {
+    "description": "Un futur centre sportif communautaire et de basketball intérieur au service des familles, des jeunes, des écoles, des équipes, des entraîneurs et des organisations de l'Ouest-de-l'Île de Montréal.",
+    "programsHeading": "Programmes",
+    "courtRentals": "Location de terrains",
+    "youthAcademy": "Académie jeunesse",
+    "campsClinics": "Camps et cliniques",
+    "leaguesTournaments": "Ligues et tournois",
+    "communityHeading": "Communauté",
+    "schoolPartnerships": "Partenariats scolaires",
+    "birthdayParties": "Fêtes d'anniversaire",
+    "corporateEvents": "Événements corporatifs",
+    "sponsorships": "Commandites",
+    "newsUpdates": "Actualités et mises à jour",
+    "contactHeading": "Contact",
+    "rightsReserved": "Tous droits réservés.",
+    "poweredBy": "Propulsé par BizzOne Digital"
+  },
+  "contact": {
+    "label": "Contactez MSC",
+    "headline1": "Soyez le premier informé de",
+    "headline2": "l'ouverture des réservations.",
+    "description": "Intéressé par la location de terrains, l'académie jeunesse, les camps, les tournois, les fêtes, les événements corporatifs ou les partenariats? Envoyez-nous un message et nous vous répondrons avec les détails.",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "area": "Secteur",
+    "formTitle": "Envoyer une demande",
+    "successTitle": "Message reçu!",
+    "successMessage": "Merci de nous avoir contactés. Notre équipe vous répondra bientôt avec plus d'informations.",
+    "sendAnother": "Envoyer un autre message",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Votre nom complet",
+    "emailPlaceholder": "vous@exemple.com",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "514-000-0000",
+    "interestLabel": "Je suis intéressé par",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Dites-nous ce que vous recherchez...",
+    "sending": "Envoi en cours...",
+    "submit": "Envoyer la demande",
+    "requiredError": "Veuillez remplir tous les champs obligatoires.",
+    "genericError": "Une erreur s'est produite. Veuillez réessayer ou nous écrire directement.",
+    "interests": {
+      "courtRental": "Location de terrain",
+      "youthAcademy": "Académie jeunesse",
+      "campsClinics": "Camps et cliniques",
+      "leagues": "Ligues et tournois",
+      "birthdayEvent": "Anniversaire / Événement",
+      "membership": "Adhésion",
+      "partnership": "Partenariat",
+      "other": "Autre"
+    }
+  },
+  "hero": {
+    "scrollHint": "Faites défiler pour explorer",
+    "features": {
+      "safe": "Sécuritaire et géré professionnellement",
+      "open": "Ouvert 7 jours sur 7",
+      "levels": "Tous les niveaux sont les bienvenus"
+    }
+  },
+  "programs": {
+    "label": "Programmes et activités",
+    "headline1": "Une installation axée sur le basketball",
+    "headline2": "pour tous les niveaux.",
+    "description": "Des joueurs débutants aux athlètes compétitifs, MSC propose des programmes structurés, un accès flexible aux terrains et des activités communautaires sous un même toit.",
+    "inquireButton": "Se renseigner sur ce programme"
+  },
+  "memberships": {
+    "label": "Adhésions",
+    "headline1": "Des options flexibles pour les joueurs",
+    "headline2": "et les",
+    "headline3": "familles.",
+    "description": "Choisissez le plan qui correspond à vos objectifs. Toutes les adhésions incluent l'accès communautaire et la réservation prioritaire.",
+    "mostPopular": "Le plus populaire",
+    "from": "À partir de",
+    "note": "Les prix finaux et les avantages seront confirmés avant le lancement. Contactez-nous pour rejoindre la liste des membres fondateurs."
+  },
+  "pricing": {
+    "label": "Tarifs des terrains",
+    "headline1": "Des tarifs transparents,",
+    "headline2": "sans frais cachés.",
+    "offPeak": "Heures creuses",
+    "peak": "Heures de pointe",
+    "note": "Les heures de pointe sont généralement les soirées (18h-22h) et les fins de semaine. Contactez-nous pour connaître les horaires exacts et les rabais de groupe.",
+    "per": "par",
+    "hour": "heure",
+    "customQuoteTitle": "Besoin d'une soumission personnalisée?",
+    "customQuoteDesc": "Réservations de bloc, forfaits d'équipe et tarifs pour associations disponibles. Contactez-nous.",
+    "requestQuote": "Demander une soumission"
+  },
+  "offers": {
+    "label": "Offres spéciales",
+    "headline1": "Des offres de lancement à",
+    "headline2": "ne pas manquer.",
+    "description": "Profitez de nos offres de la période de fondation avant qu'elles n'expirent. Ces tarifs ne dureront pas une fois ouvert.",
+    "expires": "Expire le"
+  },
+  "testimonials": {
+    "label": "Témoignages",
+    "headline1": "Ce que la communauté",
+    "headline2": "en dit."
+  },
+  "gallery": {
+    "label": "Galerie",
+    "defaultTitle": "Un aperçu ",
+    "defaultSubtitle": "de l'espace."
+  },
+  "facility": {
+    "label": "Vision de l'installation",
+    "headline1": "Conçu pour l'accès, la sécurité",
+    "headline2": "et l'impact communautaire.",
+    "description": "MSC est conçu pour devenir une destination intérieure de confiance où les joueurs peuvent s'entraîner régulièrement, les familles se sentent bienvenues et les organisations disposent d'un endroit professionnel pour organiser leurs programmes.",
+    "sqft": "pi² d'espace de jeu",
+    "askButton": "Renseignez-vous sur la disponibilité",
+    "features": {
+      "layoutTitle": "Aménagement axé sur le basketball",
+      "layoutDesc": "Programmation efficace des terrains pour les locations, les séances d'académie, les camps et les tournois.",
+      "familyTitle": "Environnement familial",
+      "familyDesc": "Un espace accueillant pour les enfants, les parents, les équipes, les entraîneurs et les groupes communautaires.",
+      "mgmtTitle": "Gestion professionnelle",
+      "mgmtDesc": "Horaires clairs, programmes organisés, normes de sécurité et communication fiable.",
+      "hubTitle": "Pôle communautaire de l'Ouest-de-l'Île",
+      "hubDesc": "Desservant Pointe-Claire, DDO, Pierrefonds, Kirkland, Beaconsfield, Dorval et les environs."
+    }
+  },
+  "partners": {
+    "label": "Opportunités de partenariat",
+    "headline1": "Devenez partenaire de MSC pour soutenir",
+    "headline2": "la jeunesse, le sport et la communauté.",
+    "description": "MSC accueille les discussions avec les écoles, les associations jeunesse, les clubs de basketball, les entreprises locales, les municipalités, les commanditaires et les organisations communautaires intéressées par des programmes, des locations, des événements ou des partenariats à long terme.",
+    "types": {
+      "schools": "Écoles",
+      "associations": "Associations",
+      "corporateEvents": "Événements corporatifs",
+      "sponsorships": "Commandites de terrain"
+    },
+    "becomePartner": "Devenir partenaire",
+    "viewMemberships": "Voir les options d'adhésion"
+  },
+  "partnerBenefits": {
+    "label": "Pourquoi être partenaire de MSC",
+    "headline1": "Conçu pour les organisations",
+    "headline2": "qui ont besoin d'une base fiable.",
+    "howItStarts": "Comment démarrer un partenariat",
+    "benefits": {
+      "accessTitle": "Accès fiable aux terrains",
+      "accessDesc": "Créneaux horaires dédiés pour les écoles, associations et organisations qui ont besoin d'un espace intérieur professionnel et constant.",
+      "visibilityTitle": "Visibilité communautaire",
+      "visibilityDesc": "Rejoignez les familles, les jeunes et les membres de la communauté de l'Ouest-de-l'Île grâce à des programmes et événements co-marqués.",
+      "sponsorshipTitle": "Forfaits de commandite",
+      "sponsorshipDesc": "Nommage de terrain, commandites d'événements et opportunités de visibilité saisonnière adaptées à vos objectifs et à votre budget.",
+      "supportTitle": "Soutien professionnel",
+      "supportDesc": "Un point de contact dédié, un horaire clair et une communication fiable tout au long du partenariat."
+    },
+    "steps": {
+      "step1": "Contactez-nous avec votre organisation et vos objectifs",
+      "step2": "Nous planifions un appel pour comprendre vos besoins",
+      "step3": "Convenez d'un programme, d'une commandite ou d'un plan de location",
+      "step4": "Lancez le partenariat et suivez les résultats ensemble"
+    }
+  },
+  "hoursLocation": {
+    "hoursHeading": "Heures d'ouverture",
+    "closed": "Fermé",
+    "locationHeading": "Emplacement et contact",
+    "servingWestIsland": "Au service de l'Ouest-de-l'Île",
+    "phone": "Téléphone",
+    "email": "Courriel",
+    "getDirections": "Obtenir l'itinéraire",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    }
+  },
+  "blog": {
+    "label": "Blogue MSC",
+    "headline1": "Actualités, mises à jour et ",
+    "headline2": "communauté.",
+    "description": "Restez informé des programmes, événements et conseils de basketball de MSC, ainsi que de l'actualité de la communauté sportive de l'Ouest-de-l'Île.",
+    "loading": "Chargement des articles...",
+    "empty": "Aucun article trouvé. Revenez bientôt!",
+    "categories": {
+      "all": "Tous",
+      "news": "Actualités",
+      "programs": "Programmes",
+      "events": "Événements",
+      "community": "Communauté",
+      "tips": "Conseils"
+    }
+  }
+}

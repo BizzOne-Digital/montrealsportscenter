@@ -62,6 +62,7 @@ export default function SettingsPage() {
           <div className="form-row">
             <div className="form-group"><label>Site Name</label><input value={form.siteName || ''} onChange={e => set('siteName', e.target.value)} /></div>
             <div className="form-group"><label>Tagline</label><input value={form.tagline || ''} onChange={e => set('tagline', e.target.value)} /></div>
+            <div className="form-group"><label>FR: Tagline</label><input value={form.taglineFr || ''} onChange={e => set('taglineFr', e.target.value)} placeholder="French translation (optional)" /></div>
           </div>
         </div>
 
@@ -71,8 +72,14 @@ export default function SettingsPage() {
             <div className="form-group"><label>Email</label><input type="email" value={form.email || ''} onChange={e => set('email', e.target.value)} /></div>
             <div className="form-group"><label>Phone</label><input value={form.phone || ''} onChange={e => set('phone', e.target.value)} /></div>
           </div>
-          <div className="form-group"><label>Address / Area</label><input value={form.address || ''} onChange={e => set('address', e.target.value)} /></div>
-          <div className="form-group"><label>Service Area Description</label><input value={form.area || ''} onChange={e => set('area', e.target.value)} /></div>
+          <div className="form-row">
+            <div className="form-group"><label>Address / Area</label><input value={form.address || ''} onChange={e => set('address', e.target.value)} /></div>
+            <div className="form-group"><label>FR: Address / Area</label><input value={form.addressFr || ''} onChange={e => set('addressFr', e.target.value)} placeholder="French translation (optional)" /></div>
+          </div>
+          <div className="form-row">
+            <div className="form-group"><label>Service Area Description</label><input value={form.area || ''} onChange={e => set('area', e.target.value)} /></div>
+            <div className="form-group"><label>FR: Service Area Description</label><input value={form.areaFr || ''} onChange={e => set('areaFr', e.target.value)} placeholder="French translation (optional)" /></div>
+          </div>
         </div>
 
         <div className="settings-section">
@@ -93,24 +100,34 @@ export default function SettingsPage() {
             <label className="toggle"><input type="checkbox" checked={form.announcement?.isActive || false} onChange={e => setNested('announcement', 'isActive', e.target.checked)} /><span className="toggle-slider" /></label>
             <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>Show announcement bar</span>
           </div>
-          <div className="form-group"><label>Announcement Text</label><input value={form.announcement?.text || ''} onChange={e => setNested('announcement', 'text', e.target.value)} /></div>
+          <div className="form-row">
+            <div className="form-group"><label>Announcement Text</label><input value={form.announcement?.text || ''} onChange={e => setNested('announcement', 'text', e.target.value)} /></div>
+            <div className="form-group"><label>FR: Announcement Text</label><input value={form.announcement?.textFr || ''} onChange={e => setNested('announcement', 'textFr', e.target.value)} placeholder="French translation (optional)" /></div>
+          </div>
         </div>
 
         <div className="settings-section">
           <h4>SEO Settings</h4>
-          <div className="form-group"><label>Meta Title</label><input value={form.seo?.metaTitle || ''} onChange={e => setNested('seo', 'metaTitle', e.target.value)} /></div>
-          <div className="form-group"><label>Meta Description</label><textarea value={form.seo?.metaDescription || ''} onChange={e => setNested('seo', 'metaDescription', e.target.value)} rows={2} /></div>
+          <div className="form-row">
+            <div className="form-group"><label>Meta Title</label><input value={form.seo?.metaTitle || ''} onChange={e => setNested('seo', 'metaTitle', e.target.value)} /></div>
+            <div className="form-group"><label>FR: Meta Title</label><input value={form.seo?.metaTitleFr || ''} onChange={e => setNested('seo', 'metaTitleFr', e.target.value)} placeholder="French translation (optional)" /></div>
+          </div>
+          <div className="form-row">
+            <div className="form-group"><label>Meta Description</label><textarea value={form.seo?.metaDescription || ''} onChange={e => setNested('seo', 'metaDescription', e.target.value)} rows={2} /></div>
+            <div className="form-group"><label>FR: Meta Description</label><textarea value={form.seo?.metaDescriptionFr || ''} onChange={e => setNested('seo', 'metaDescriptionFr', e.target.value)} rows={2} placeholder="French translation (optional)" /></div>
+          </div>
           <div className="form-group"><label>Keywords</label><input value={form.seo?.keywords || ''} onChange={e => setNested('seo', 'keywords', e.target.value)} /></div>
         </div>
 
         <div className="settings-section">
           <h4>Operating Hours</h4>
           <table className="admin-table">
-            <thead><tr><th>Day</th><th>Open</th><th>Close</th><th>Closed</th></tr></thead>
+            <thead><tr><th>Day</th><th>FR Day</th><th>Open</th><th>Close</th><th>Closed</th></tr></thead>
             <tbody>
               {(form.operatingHours || []).map((h, i) => (
                 <tr key={h.day}>
                   <td><strong>{h.day}</strong></td>
+                  <td><input style={{ width: '120px', padding: '4px 8px', border: '1px solid var(--gray-200)', borderRadius: '6px', fontSize: '0.875rem' }} value={h.dayFr || ''} onChange={e => setHours(i, 'dayFr', e.target.value)} placeholder="French (optional)" /></td>
                   <td><input style={{ width: '120px', padding: '4px 8px', border: '1px solid var(--gray-200)', borderRadius: '6px', fontSize: '0.875rem' }} value={h.open} onChange={e => setHours(i, 'open', e.target.value)} disabled={h.isClosed} /></td>
                   <td><input style={{ width: '120px', padding: '4px 8px', border: '1px solid var(--gray-200)', borderRadius: '6px', fontSize: '0.875rem' }} value={h.close} onChange={e => setHours(i, 'close', e.target.value)} disabled={h.isClosed} /></td>
                   <td><label className="toggle"><input type="checkbox" checked={h.isClosed || false} onChange={e => setHours(i, 'isClosed', e.target.checked)} /><span className="toggle-slider" /></label></td>

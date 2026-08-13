@@ -65,6 +65,45 @@
 }
 .nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
 .nav-cta { margin-left: 0.5rem; }
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.75rem;
+  font-size: 0.8rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0.35rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.lang-toggle button:hover { color: white; }
+.lang-toggle button.active { color: var(--orange); }
+.lang-toggle span { color: rgba(255,255,255,0.35); }
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.2rem 0.35rem;
+  border-radius: var(--radius-sm);
+}
+.lang-toggle button.active { color: var(--orange); }
+.lang-toggle button:hover { background: rgba(255,255,255,0.08); }
 .menu-toggle {
   display: none;
   background: none;

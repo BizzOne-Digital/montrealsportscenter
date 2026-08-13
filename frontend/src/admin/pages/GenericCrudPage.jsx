@@ -13,12 +13,18 @@ export default function GenericCrudPage({ entity, label, fields, hasImage, image
   const [saving, setSaving] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
+  // Fields that have a paired French input (field.frKey) are treated as isArray-aware
+  // via the same frKey name, so array splitting/joining applies to both EN and FR keys.
+  const allKeys = (fd) => fd.frKey ? [fd.name, fd.frKey] : [fd.name];
+
   const buildEmpty = () => {
     const obj = {};
     fields.forEach(f => {
-      if (f.type === 'toggle') obj[f.name] = f.name === 'isActive' ? true : false;
-      else if (f.type === 'number') obj[f.name] = f.name === 'order' ? 0 : '';
-      else obj[f.name] = '';
+      allKeys(f).forEach(key => {
+        if (f.type === 'toggle') obj[key] = key === 'isActive' ? true : false;
+        else if (f.type === 'number') obj[key] = key === 'order' ? 0 : '';
+        else obj[key] = '';
+      });
     });
     return obj;
   };
@@ -32,7 +38,9 @@ export default function GenericCrudPage({ entity, label, fields, hasImage, image
   const openNew = () => { setForm(buildEmpty()); setEditId(null); setImageFile(null); setShowForm(true); };
   const openEdit = (item) => {
     const f = { ...item };
-    fields.filter(fd => fd.isArray).forEach(fd => { if (Array.isArray(f[fd.name])) f[fd.name] = f[fd.name].join('\n'); });
+    fields.filter(fd => fd.isArray).forEach(fd => {
+      allKeys(fd).forEach(key => { if (Array.isArray(f[key])) f[key] = f[key].join('\n'); });
+    });
     setForm(f); setEditId(item._id); setImageFile(null); setShowForm(true);
   };
 
@@ -44,7 +52,7 @@ export default function GenericCrudPage({ entity, label, fields, hasImage, image
       if (hasImage) {
         data = new FormData();
         Object.entries(form).forEach(([k, v]) => {
-          const field = fields.find(f => f.name === k);
+          const field = fields.find(f => f.name === k || f.frKey === k);
           if (field?.isArray) data.append(k, JSON.stringify(String(v).split('\n').map(s => s.trim()).filter(Boolean)));
           else if (v !== null && v !== undefined) data.append(k, String(v));
         });
@@ -52,7 +60,9 @@ export default function GenericCrudPage({ entity, label, fields, hasImage, image
       } else {
         data = { ...form };
         fields.filter(fd => fd.isArray).forEach(fd => {
-          if (typeof data[fd.name] === 'string') data[fd.name] = data[fd.name].split('\n').map(s => s.trim()).filter(Boolean);
+          allKeys(fd).forEach(key => {
+            if (typeof data[key] === 'string') data[key] = data[key].split('\n').map(s => s.trim()).filter(Boolean);
+          });
         });
       }
       if (editId) { await API.put(`/${entity}/${editId}`, data); toast.success(`${label.slice(0, -1)} updated`); }
@@ -94,24 +104,36 @@ export default function GenericCrudPage({ entity, label, fields, hasImage, image
             <form onSubmit={save} className="modal-form">
               {hasImage && <ImageUploader current={form[imageField]} onSelect={setImageFile} label="Image" />}
               {fields.map(field => (
-                <div key={field.name} className="form-group">
-                  <label>{field.label}{field.required ? ' *' : ''}</label>
-                  {field.type === 'text' || field.type === 'email' || field.type === 'date' ? (
-                    <input type={field.type} value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} />
-                  ) : field.type === 'number' ? (
-                    <input type="number" value={form[field.name] ?? ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} min={field.name === 'rating' ? 1 : 0} max={field.name === 'rating' ? 5 : undefined} />
-                  ) : field.type === 'textarea' ? (
-                    <textarea value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} rows={3} />
-                  ) : field.type === 'select' ? (
-                    <select value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))}>
-                      {field.options.map(o => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  ) : field.type === 'toggle' ? (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '4px' }}>
-                      <label className="toggle"><input type="checkbox" checked={!!form[field.name]} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.checked }))} /><span className="toggle-slider" /></label>
-                      <span style={{ fontSize: '0.875rem' }}>{form[field.name] ? 'Yes' : 'No'}</span>
+                <div key={field.name} className={field.frKey ? 'form-row' : undefined}>
+                  <div className="form-group">
+                    <label>{field.label}{field.required ? ' *' : ''}</label>
+                    {field.type === 'text' || field.type === 'email' || field.type === 'date' ? (
+                      <input type={field.type} value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} />
+                    ) : field.type === 'number' ? (
+                      <input type="number" value={form[field.name] ?? ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} min={field.name === 'rating' ? 1 : 0} max={field.name === 'rating' ? 5 : undefined} />
+                    ) : field.type === 'textarea' ? (
+                      <textarea value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))} required={field.required} rows={3} />
+                    ) : field.type === 'select' ? (
+                      <select value={form[field.name] || ''} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.value }))}>
+                        {field.options.map(o => <option key={o} value={o}>{o}</option>)}
+                      </select>
+                    ) : field.type === 'toggle' ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '4px' }}>
+                        <label className="toggle"><input type="checkbox" checked={!!form[field.name]} onChange={e => setForm(f => ({ ...f, [field.name]: e.target.checked }))} /><span className="toggle-slider" /></label>
+                        <span style={{ fontSize: '0.875rem' }}>{form[field.name] ? 'Yes' : 'No'}</span>
+                      </div>
+                    ) : null}
+                  </div>
+                  {field.frKey && (
+                    <div className="form-group">
+                      <label>FR: {field.label}</label>
+                      {field.type === 'textarea' ? (
+                        <textarea value={form[field.frKey] || ''} onChange={e => setForm(f => ({ ...f, [field.frKey]: e.target.value }))} rows={3} placeholder="French translation (optional)" />
+                      ) : (
+                        <input type={field.type === 'number' ? 'number' : 'text'} value={form[field.frKey] || ''} onChange={e => setForm(f => ({ ...f, [field.frKey]: e.target.value }))} placeholder="French translation (optional)" />
+                      )}
                     </div>
-                  ) : null}
+                  )}
                 </div>
               ))}
               <div className="form-row modal-actions">

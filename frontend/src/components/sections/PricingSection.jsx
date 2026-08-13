@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { IconBasketball, IconTarget } from '../common/Icons';
 import Reveal from '../common/Reveal';
+import { pick } from '../../utils/localize';
 import './PricingSection.css';
 
 const COURT_ICONS = {
@@ -13,6 +15,8 @@ const COURT_ICONS = {
 };
 
 export default function PricingSection({ pricing }) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   const [mode, setMode] = useState('peak');
   if (!pricing?.length) return null;
 
@@ -21,18 +25,18 @@ export default function PricingSection({ pricing }) {
       <div className="container">
         <Reveal as="div" className="pricing-header">
           <div>
-            <div className="section-label">Court Pricing</div>
-            <h2>Transparent rates,<br /><span className="text-orange">no hidden fees.</span></h2>
+            <div className="section-label">{t('pricing.label')}</div>
+            <h2>{t('pricing.headline1')}<br /><span className="text-orange">{t('pricing.headline2')}</span></h2>
           </div>
           <div className="pricing-toggle">
-            <button className={mode === 'offpeak' ? 'active' : ''} onClick={() => setMode('offpeak')}>Off-Peak</button>
-            <button className={mode === 'peak' ? 'active' : ''} onClick={() => setMode('peak')}>Peak Hours</button>
+            <button className={mode === 'offpeak' ? 'active' : ''} onClick={() => setMode('offpeak')}>{t('pricing.offPeak')}</button>
+            <button className={mode === 'peak' ? 'active' : ''} onClick={() => setMode('peak')}>{t('pricing.peak')}</button>
           </div>
         </Reveal>
 
         <div className="pricing-note-bar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Peak hours are typically evenings (6–10 PM) and weekends. Contact us for exact schedules and group discounts.
+          {t('pricing.note')}
         </div>
 
         <div className="pricing-grid">
@@ -42,8 +46,8 @@ export default function PricingSection({ pricing }) {
                 {COURT_ICONS[item.icon] || <IconBasketball size={20} color="#f97316" />}
               </div>
               <div className="pricing-card-info">
-                <h4>{item.courtName}</h4>
-                <div className="pricing-tag">per {item.unit || 'hour'}</div>
+                <h4>{pick(item, 'courtName', lang)}</h4>
+                <div className="pricing-tag">{t('pricing.per')} {pick(item, 'unit', lang) || t('pricing.hour')}</div>
               </div>
               <div className="pricing-card-price">
                 <span className="price-amount">
@@ -57,10 +61,10 @@ export default function PricingSection({ pricing }) {
 
         <div className="pricing-cta-block">
           <div className="pcb-text">
-            <h3>Need a custom quote?</h3>
-            <p>Block bookings, team packages, and association rates are available. Get in touch.</p>
+            <h3>{t('pricing.customQuoteTitle')}</h3>
+            <p>{t('pricing.customQuoteDesc')}</p>
           </div>
-          <Link to="/contact" className="btn btn-primary">Request a Quote</Link>
+          <Link to="/contact" className="btn btn-primary">{t('pricing.requestQuote')}</Link>
         </div>
       </div>
     </section>

@@ -20,20 +20,27 @@ const siteSettingsSchema = new mongoose.Schema({
     metaTitle: { type: String, default: 'Montreal Sports Center - Train. Play. Compete. Belong.' },
     metaDescription: { type: String, default: 'A basketball-first indoor sports hub for youth, families, teams, schools, and the West Island community.' },
     keywords: { type: String, default: 'basketball, sports center, Montreal, West Island, youth academy, court rental' },
+    metaTitleFr: { type: String, default: '' },
+    metaDescriptionFr: { type: String, default: '' },
   },
   announcement: {
     text: { type: String, default: 'Coming soon to the West Island of Montreal' },
     isActive: { type: Boolean, default: true },
+    textFr: { type: String, default: '' },
   },
   operatingHours: [
     {
       day: { type: String },
+      dayFr: { type: String, default: '' },
       open: { type: String },
       close: { type: String },
       isClosed: { type: Boolean, default: false }
     }
   ],
   isMaintenanceMode: { type: Boolean, default: false },
+  taglineFr: { type: String, default: '' },
+  addressFr: { type: String, default: '' },
+  areaFr: { type: String, default: '' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('SiteSettings', siteSettingsSchema);

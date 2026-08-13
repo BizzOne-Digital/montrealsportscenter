@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { IconShield, IconUsers, IconTarget, IconMapPin, IconCheck } from '../common/Icons';
 import Reveal from '../common/Reveal';
 import './FacilitySection.css';
 
 const FACILITY_IMG = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&auto=format';
 
-const FEATURES = [
-  { icon: <IconTarget size={20} color="#f97316" />, title: 'Basketball-focused layout', desc: 'Efficient court programming for rentals, academy sessions, camps, and tournaments.' },
-  { icon: <IconUsers size={20} color="#f97316" />, title: 'Family-friendly environment', desc: 'A welcoming space for children, parents, teams, coaches, and community groups.' },
-  { icon: <IconShield size={20} color="#f97316" />, title: 'Professional management', desc: 'Clear scheduling, organized programs, safety standards, and reliable communication.' },
-  { icon: <IconMapPin size={20} color="#f97316" />, title: 'West Island community hub', desc: 'Serving Pointe-Claire, DDO, Pierrefonds, Kirkland, Beaconsfield, Dorval, and nearby areas.' },
-];
-
 export default function FacilitySection() {
+  const { t } = useTranslation();
+  const FEATURES = [
+    { icon: <IconTarget size={20} color="#f97316" />, title: t('facility.features.layoutTitle'), desc: t('facility.features.layoutDesc') },
+    { icon: <IconUsers size={20} color="#f97316" />, title: t('facility.features.familyTitle'), desc: t('facility.features.familyDesc') },
+    { icon: <IconShield size={20} color="#f97316" />, title: t('facility.features.mgmtTitle'), desc: t('facility.features.mgmtDesc') },
+    { icon: <IconMapPin size={20} color="#f97316" />, title: t('facility.features.hubTitle'), desc: t('facility.features.hubDesc') },
+  ];
   return (
     <section className="section facility-section" id="facility">
       <div className="container">
@@ -22,14 +23,14 @@ export default function FacilitySection() {
               <img src={FACILITY_IMG} alt="MSC Facility" loading="lazy" />
               <div className="facility-img-badge">
                 <span className="fib-value">10,000+</span>
-                <span className="fib-label">sq. ft. of court space</span>
+                <span className="fib-label">{t('facility.sqft')}</span>
               </div>
             </div>
           </Reveal>
           <Reveal as="div" delay={120} className="facility-info-col">
-            <div className="section-label">Facility Vision</div>
-            <h2>Built for access, safety,<br /><span className="text-orange">and community impact.</span></h2>
-            <p className="facility-desc">MSC is designed to become a trusted indoor destination where players can train consistently, families feel welcome, and organizations have a professional place to run programs.</p>
+            <div className="section-label">{t('facility.label')}</div>
+            <h2>{t('facility.headline1')}<br /><span className="text-orange">{t('facility.headline2')}</span></h2>
+            <p className="facility-desc">{t('facility.description')}</p>
             <div className="facility-features">
               {FEATURES.map((f, i) => (
                 <div key={i} className="facility-feature">
@@ -41,7 +42,7 @@ export default function FacilitySection() {
                 </div>
               ))}
             </div>
-            <Link to="/contact" className="btn btn-dark mt-4">Ask About Availability</Link>
+            <Link to="/contact" className="btn btn-dark mt-4">{t('facility.askButton')}</Link>
           </Reveal>
         </div>
       </div>

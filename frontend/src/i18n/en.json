@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "programs": "Programs",
+    "facility": "Facility",
+    "memberships": "Memberships",
+    "partners": "Partners",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Join the Interest List",
+    "toggleMenu": "Toggle menu",
+    "langEn": "EN",
+    "langFr": "FR"
+  },
+  "footer": {
+    "description": "A future indoor basketball and community sports center serving families, youth, schools, teams, coaches, and organizations across Montreal's West Island.",
+    "programsHeading": "Programs",
+    "courtRentals": "Court Rentals",
+    "youthAcademy": "Youth Academy",
+    "campsClinics": "Camps & Clinics",
+    "leaguesTournaments": "Leagues & Tournaments",
+    "communityHeading": "Community",
+    "schoolPartnerships": "School Partnerships",
+    "birthdayParties": "Birthday Parties",
+    "corporateEvents": "Corporate Events",
+    "sponsorships": "Sponsorships",
+    "newsUpdates": "News & Updates",
+    "contactHeading": "Contact",
+    "rightsReserved": "All rights reserved.",
+    "poweredBy": "Powered by BizzOne Digital"
+  },
+  "contact": {
+    "label": "Contact MSC",
+    "headline1": "Be first to know when",
+    "headline2": "bookings open.",
+    "description": "Interested in court rentals, youth academy, camps, tournaments, birthdays, corporate events, or partnerships? Send a message and we'll follow up with details.",
+    "email": "Email",
+    "phone": "Phone",
+    "area": "Area",
+    "formTitle": "Send an Inquiry",
+    "successTitle": "Message Received!",
+    "successMessage": "Thank you for reaching out. Our team will get back to you shortly with more information.",
+    "sendAnother": "Send Another Message",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Your full name",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "514-000-0000",
+    "interestLabel": "I am interested in",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us what you are looking for...",
+    "sending": "Sending...",
+    "submit": "Submit Inquiry",
+    "requiredError": "Please fill in all required fields.",
+    "genericError": "Something went wrong. Please try again or email us directly.",
+    "interests": {
+      "courtRental": "Court Rental",
+      "youthAcademy": "Youth Academy",
+      "campsClinics": "Camps & Clinics",
+      "leagues": "Leagues & Tournaments",
+      "birthdayEvent": "Birthday / Event",
+      "membership": "Membership",
+      "partnership": "Partnership",
+      "other": "Other"
+    }
+  },
+  "hero": {
+    "scrollHint": "Scroll to explore",
+    "features": {
+      "safe": "Safe & professionally managed",
+      "open": "Open 7 days a week",
+      "levels": "All skill levels welcome"
+    }
+  },
+  "programs": {
+    "label": "Programs & Activities",
+    "headline1": "A basketball-first facility",
+    "headline2": "for every level.",
+    "description": "From first-time players to competitive athletes, MSC offers structured programs, flexible court access, and community activities under one roof.",
+    "inquireButton": "Inquire About This Program"
+  },
+  "memberships": {
+    "label": "Memberships",
+    "headline1": "Flexible options for players",
+    "headline2": "and",
+    "headline3": "families.",
+    "description": "Choose the plan that fits your goals. All memberships include community access and priority booking.",
+    "mostPopular": "Most Popular",
+    "from": "From",
+    "note": "Final pricing and benefits will be confirmed before launch. Contact us to join the founding members list."
+  },
+  "pricing": {
+    "label": "Court Pricing",
+    "headline1": "Transparent rates,",
+    "headline2": "no hidden fees.",
+    "offPeak": "Off-Peak",
+    "peak": "Peak Hours",
+    "note": "Peak hours are typically evenings (6–10 PM) and weekends. Contact us for exact schedules and group discounts.",
+    "per": "per",
+    "hour": "hour",
+    "customQuoteTitle": "Need a custom quote?",
+    "customQuoteDesc": "Block bookings, team packages, and association rates are available. Get in touch.",
+    "requestQuote": "Request a Quote"
+  },
+  "offers": {
+    "label": "Special Offers",
+    "headline1": "Launch deals you",
+    "headline2": "won't want to miss.",
+    "description": "Take advantage of our founding period offers before they expire. These rates won't last once we open.",
+    "expires": "Expires"
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "headline1": "What the community",
+    "headline2": "is saying."
+  },
+  "gallery": {
+    "label": "Gallery",
+    "defaultTitle": "A closer look ",
+    "defaultSubtitle": "at the space."
+  },
+  "facility": {
+    "label": "Facility Vision",
+    "headline1": "Built for access, safety,",
+    "headline2": "and community impact.",
+    "description": "MSC is designed to become a trusted indoor destination where players can train consistently, families feel welcome, and organizations have a professional place to run programs.",
+    "sqft": "sq. ft. of court space",
+    "askButton": "Ask About Availability",
+    "features": {
+      "layoutTitle": "Basketball-focused layout",
+      "layoutDesc": "Efficient court programming for rentals, academy sessions, camps, and tournaments.",
+      "familyTitle": "Family-friendly environment",
+      "familyDesc": "A welcoming space for children, parents, teams, coaches, and community groups.",
+      "mgmtTitle": "Professional management",
+      "mgmtDesc": "Clear scheduling, organized programs, safety standards, and reliable communication.",
+      "hubTitle": "West Island community hub",
+      "hubDesc": "Serving Pointe-Claire, DDO, Pierrefonds, Kirkland, Beaconsfield, Dorval, and nearby areas."
+    }
+  },
+  "partners": {
+    "label": "Partnership Opportunities",
+    "headline1": "Partner with MSC to support",
+    "headline2": "youth, sports, and community.",
+    "description": "MSC welcomes conversations with schools, youth associations, basketball clubs, local businesses, municipalities, sponsors, and community organizations interested in programs, rentals, events, or long-term partnerships.",
+    "types": {
+      "schools": "Schools",
+      "associations": "Associations",
+      "corporateEvents": "Corporate Events",
+      "sponsorships": "Court Sponsorships"
+    },
+    "becomePartner": "Become a Partner",
+    "viewMemberships": "View Membership Options"
+  },
+  "partnerBenefits": {
+    "label": "Why Partner With MSC",
+    "headline1": "Built for organizations",
+    "headline2": "that need a reliable home base.",
+    "howItStarts": "How a partnership starts",
+    "benefits": {
+      "accessTitle": "Reliable Court Access",
+      "accessDesc": "Dedicated time slots for schools, associations, and organizations that need consistent, professional indoor space.",
+      "visibilityTitle": "Community Visibility",
+      "visibilityDesc": "Reach families, youth, and community members across the West Island through co-branded programs and events.",
+      "sponsorshipTitle": "Sponsorship Packages",
+      "sponsorshipDesc": "Court naming, event sponsorships, and season-long branding opportunities tailored to your goals and budget.",
+      "supportTitle": "Professional Support",
+      "supportDesc": "A dedicated point of contact, clear scheduling, and reliable communication throughout the partnership."
+    },
+    "steps": {
+      "step1": "Reach out with your organization and goals",
+      "step2": "We schedule a call to understand your needs",
+      "step3": "Agree on a program, sponsorship, or rental plan",
+      "step4": "Launch the partnership and track results together"
+    }
+  },
+  "hoursLocation": {
+    "hoursHeading": "Hours of Operation",
+    "closed": "Closed",
+    "locationHeading": "Location & Contact",
+    "servingWestIsland": "Serving the West Island",
+    "phone": "Phone",
+    "email": "Email",
+    "getDirections": "Get Directions",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "blog": {
+    "label": "MSC Blog",
+    "headline1": "News, Updates & ",
+    "headline2": "Community.",
+    "description": "Stay informed about MSC programs, events, basketball tips, and what's happening in the West Island sports community.",
+    "loading": "Loading posts...",
+    "empty": "No posts found. Check back soon!",
+    "categories": {
+      "all": "All",
+      "news": "News",
+      "programs": "Programs",
+      "events": "Events",
+      "community": "Community",
+      "tips": "Tips"
+    }
+  }
+}

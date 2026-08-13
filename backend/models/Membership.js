@@ -12,6 +12,16 @@ const membershipSchema = new mongoose.Schema({
   isActive: { type: Boolean, default: true },
   order: { type: Number, default: 0 },
   ctaText: { type: String, default: 'Request Info' },
+  nameFr: { type: String, default: '' },
+  badgeFr: { type: String, default: '' },
+  descriptionFr: { type: String, default: '' },
+  featuresFr: [{ type: String }],
+  ctaTextFr: { type: String, default: '' },
+  nameFr: { type: String, default: '' },
+  badgeFr: { type: String, default: '' },
+  descriptionFr: { type: String, default: '' },
+  featuresFr: [{ type: String, default: '' }],
+  ctaTextFr: { type: String, default: '' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Membership', membershipSchema);

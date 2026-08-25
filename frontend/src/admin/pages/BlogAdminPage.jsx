@@ -101,7 +101,7 @@ export default function BlogAdminPage() {
         {loading ? <p className="loading-text">Loading...</p> :
           items.length === 0 ? <div className="empty-state"><p>No posts yet.</p></div> :
           <table className="admin-table">
-            <thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Published</th><th>Views</th><th>Actions</th></tr></thead>
+            <thead><tr><th>Title</th><th>Category,</th><th>Author</th><th>Published</th><th>Views</th><th>Actions</th></tr></thead>
             <tbody>
               {items.map(item => (
                 <tr key={item._id}>
